@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bids",
+  "info": {
+    "name": "bid"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "bid_price": {
+      "type": "decimal",
+      "default": 0,
+      "required": true
+    },
+    "product": {
+      "via": "bids",
+      "model": "product"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "bids"
+    }
+  }
+}
